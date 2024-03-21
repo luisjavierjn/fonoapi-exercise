@@ -21,7 +21,7 @@ INSERT INTO users (name, lastname, email, age) VALUES ('Elena', 'Martínez', 'el
 ---
 
 CREATE TABLE devices (
-    id SERIAL PRIMARY KEY,
+    device_id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     brand VARCHAR(255),
     technology VARCHAR(255),

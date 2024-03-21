@@ -16,9 +16,10 @@ import lombok.NoArgsConstructor;
 public class Device {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @Column(name = "DEVICE_ID")
+    private Long device_id;
 
-    @Column(name = "NAME", nullable = false, length = 255)
+    @Column(name = "NAME", nullable = false)
     private String name;
 
     @Column(name = "BRAND", nullable = false)

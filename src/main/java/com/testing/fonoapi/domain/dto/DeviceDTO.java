@@ -8,7 +8,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class DeviceDTO {
-    private Integer id;
+    private Long device_id;
     private String name;
     private String brand;
     private String technology;
