@@ -15,10 +15,10 @@ public class DeviceService {
     private final DeviceRepository deviceRepository;
     private final ModelMapper modelMapper;
 
-    public List<DeviceDTO> getAllPrices() {
+    public List<DeviceDTO> getAllDevices() {
         return deviceRepository.findAll()
                 .stream()
-                .map(price -> modelMapper.map(price, DeviceDTO.class))
+                .map(device -> modelMapper.map(device, DeviceDTO.class))
                 .collect(Collectors.toList());
     }
 }

@@ -17,7 +17,7 @@ public class DeviceController {
     private final DeviceService deviceService;
 
     @GetMapping
-    public ResponseEntity<List<DeviceDTO>> getAllPrices() {
-        return ResponseEntity.ok(deviceService.getAllPrices());
+    public ResponseEntity<List<DeviceDTO>> getAllDevices() {
+        return ResponseEntity.ok(deviceService.getAllDevices());
     }
 }
