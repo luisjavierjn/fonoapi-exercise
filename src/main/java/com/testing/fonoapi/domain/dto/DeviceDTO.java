@@ -8,8 +8,8 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class DeviceDTO {
-    private Long id;
-    private String deviceName;
+    private Integer id;
+    private String name;
     private String brand;
     private String technology;
     private String _2g_bands;

@@ -16,24 +16,23 @@ import lombok.NoArgsConstructor;
 public class Device {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "device_id")
-    private Long id;
+    private Integer id;
 
-    @Column(name = "name", nullable = false)
-    private String deviceName;
+    @Column(name = "NAME", nullable = false, length = 255)
+    private String name;
 
-    @Column(name = "brand", nullable = false)
+    @Column(name = "BRAND", nullable = false)
     private String brand;
 
-    @Column(name = "technology")
+    @Column(name = "TECHNOLOGY", nullable = false)
     private String technology;
 
-    @Column(name = "_2g_bands")
+    @Column(name = "_2G_BANDS", nullable = false)
     private String _2g_bands;
 
-    @Column(name = "_3g_bands")
+    @Column(name = "_3G_BANDS", nullable = false)
     private String _3g_bands;
 
-    @Column(name = "_4g_bands")
+    @Column(name = "_4G_BANDS", nullable = false, length = 512)
     private String _4g_bands;
 }
