@@ -1,7 +1,10 @@
 package com.testing.fonoapi.services;
 
+import com.testing.fonoapi.domain.dto.DeviceDTO;
+import com.testing.fonoapi.domain.dto.InventoryDTO;
 import com.testing.fonoapi.domain.dto.ReqTypeDTO;
 import com.testing.fonoapi.domain.dto.RequirementDTO;
+import com.testing.fonoapi.domain.dto.UserDTO;
 import com.testing.fonoapi.repositories.RequirementRepository;
 import com.testing.fonoapi.repositories.RequirementTypeRepository;
 import lombok.AllArgsConstructor;
@@ -28,7 +31,21 @@ public class RequirementService {
     public List<RequirementDTO> getAllReq() {
         return reqRepository.findAll()
                 .stream()
-                .map(req -> modelMapper.map(req, RequirementDTO.class))
+                .map(req ->
+                    RequirementDTO.builder()
+                            .reqId(req.getReqId())
+                            .userDTO(modelMapper.map(req.getUser(), UserDTO.class))
+                            .inventoryDTO(
+                                    InventoryDTO.builder()
+                                            .deviceId(req.getInventory().getDevice().getDeviceId())
+                                            .deviceDTO(modelMapper.map(req.getInventory().getDevice(), DeviceDTO.class))
+                                            .quantity(req.getInventory().getQuantity())
+                                            .build()
+                            )
+                            .reqTypeDTO(modelMapper.map(req.getReqType(), ReqTypeDTO.class))
+                            .dateTime(req.getDateTime())
+                            .build()
+                )
                 .collect(Collectors.toList());
     }
 }
