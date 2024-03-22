@@ -38,3 +38,7 @@ a workaround which was using my own data in H2
 ![Endpoint4](./images/Screenshot%20from%202024-03-22%2003-46-01.png)  
 ![Endpoint5](./images/Screenshot%20from%202024-03-22%2003-46-02.png)  
 ![Endpoint6](./images/Screenshot%20from%202024-03-22%2003-46-04.png)  
+
+## Intellij config
+
+![Intellij](./images/Screenshot%20from%202024-03-22%2004-05-42.png)  
