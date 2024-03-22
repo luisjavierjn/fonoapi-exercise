@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface RequirementTypeRepository extends JpaRepository<ReqType, Long> {
+    ReqType findByName(String nombre);
 }

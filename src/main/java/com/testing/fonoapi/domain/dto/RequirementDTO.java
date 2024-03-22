@@ -2,11 +2,6 @@ package com.testing.fonoapi.domain.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.testing.fonoapi.domain.entities.Device;
-import com.testing.fonoapi.domain.entities.Inventory;
-import com.testing.fonoapi.domain.entities.ReqType;
-import com.testing.fonoapi.domain.entities.User;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,7 +9,8 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 @Getter
-@Builder
+@Setter
+@NoArgsConstructor
 public class RequirementDTO {
     private Long reqId;
     @JsonProperty("user")
@@ -35,5 +31,38 @@ public class RequirementDTO {
 
     public Boolean getAvailable() {
         return inventoryDTO.getQuantity() > 0;
+    }
+
+    public static RequirementDTO builder() {
+        return new RequirementDTO();
+    }
+
+    public RequirementDTO setReqId(Long reqId) {
+        this.reqId = reqId;
+        return this;
+    }
+
+    public RequirementDTO setUserDTO(UserDTO userDTO) {
+        this.userDTO = userDTO;
+        return this;
+    }
+
+    public RequirementDTO setInventoryDTO(InventoryDTO inventoryDTO) {
+        this.inventoryDTO = inventoryDTO;
+        return this;
+    }
+
+    public RequirementDTO setReqTypeDTO(ReqTypeDTO reqTypeDTO) {
+        this.reqTypeDTO = reqTypeDTO;
+        return this;
+    }
+
+    public RequirementDTO setDateTime(LocalDateTime dateTime) {
+        this.dateTime = dateTime;
+        return this;
+    }
+
+    public RequirementDTO build() {
+        return this;
     }
 }
