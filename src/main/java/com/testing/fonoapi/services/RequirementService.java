@@ -41,21 +41,7 @@ public class RequirementService {
     public List<RequirementDTO> getAllReq() {
         return reqRepository.findAll()
                 .stream()
-                .map(this::mapRequirementToRequirementDTO
-//                    RequirementDTO.builder()
-//                            .setReqId(req.getReqId())
-//                            .setUserDTO(modelMapper.map(req.getUser(), UserDTO.class))
-//                            .setInventoryDTO(
-//                                    InventoryDTO.builder()
-//                                            .deviceId(req.getInventory().getDevice().getDeviceId())
-//                                            .deviceDTO(modelMapper.map(req.getInventory().getDevice(), DeviceDTO.class))
-//                                            .quantity(req.getInventory().getQuantity())
-//                                            .build()
-//                            )
-//                            .setReqTypeDTO(modelMapper.map(req.getReqType(), ReqTypeDTO.class))
-//                            .setDateTime(req.getDateTime())
-//                            .build()
-                )
+                .map(this::mapRequirementToRequirementDTO)
                 .collect(Collectors.toList());
     }
 

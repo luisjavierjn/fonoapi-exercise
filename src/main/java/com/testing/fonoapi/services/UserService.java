@@ -1,6 +1,5 @@
 package com.testing.fonoapi.services;
 
-import com.testing.fonoapi.domain.dto.DeviceDTO;
 import com.testing.fonoapi.domain.dto.UserDTO;
 import com.testing.fonoapi.repositories.UserRepository;
 import lombok.AllArgsConstructor;

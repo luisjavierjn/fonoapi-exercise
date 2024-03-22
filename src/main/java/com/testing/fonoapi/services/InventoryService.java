@@ -2,15 +2,12 @@ package com.testing.fonoapi.services;
 
 import com.testing.fonoapi.domain.dto.DeviceDTO;
 import com.testing.fonoapi.domain.dto.InventoryDTO;
-import com.testing.fonoapi.domain.entities.Device;
-import com.testing.fonoapi.domain.entities.Inventory;
 import com.testing.fonoapi.repositories.DeviceRepository;
 import com.testing.fonoapi.repositories.InventoryRepository;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
