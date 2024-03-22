@@ -11,10 +11,10 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 public class UserDTO {
-    private Long user_id;
+    private Long userId;
     private String name;
     private String lastname;
     private String email;
     private Integer age;
-    private LocalDateTime registration_date;
+    private LocalDateTime registrationDate;
 }

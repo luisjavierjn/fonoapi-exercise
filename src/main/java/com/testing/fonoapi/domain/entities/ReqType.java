@@ -17,7 +17,7 @@ public class ReqType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "REQ_TYPE_ID")
-    private Long req_type_id;
+    private Long reqTypeId;
 
     @Column(name = "NAME", nullable = false)
     private String name;

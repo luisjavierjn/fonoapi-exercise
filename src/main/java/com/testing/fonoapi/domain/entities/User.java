@@ -19,7 +19,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "USER_ID")
-    private Long user_id;
+    private Long userId;
 
     @Column(name = "NAME", nullable = false, length = 50)
     private String name;
@@ -34,5 +34,5 @@ public class User {
     private Integer age;
 
     @Column(name = "REGISTRATION_DATE", nullable = false)
-    private LocalDateTime registration_date;
+    private LocalDateTime registrationDate;
 }

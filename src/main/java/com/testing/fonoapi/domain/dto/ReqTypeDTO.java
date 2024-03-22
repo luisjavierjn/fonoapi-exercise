@@ -8,6 +8,6 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class ReqTypeDTO {
-    private Long req_type_id;
+    private Long reqTypeId;
     private String name;
 }

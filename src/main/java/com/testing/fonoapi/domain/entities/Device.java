@@ -17,7 +17,7 @@ public class Device {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "DEVICE_ID")
-    private Long device_id;
+    private Long deviceId;
 
     @Column(name = "NAME", nullable = false)
     private String name;
@@ -29,11 +29,11 @@ public class Device {
     private String technology;
 
     @Column(name = "_2G_BANDS", nullable = false)
-    private String _2g_bands;
+    private String _2gBands;
 
     @Column(name = "_3G_BANDS", nullable = false)
-    private String _3g_bands;
+    private String _3gBands;
 
     @Column(name = "_4G_BANDS", nullable = false, length = 512)
-    private String _4g_bands;
+    private String _4gBands;
 }

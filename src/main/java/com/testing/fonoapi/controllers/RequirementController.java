@@ -1,6 +1,7 @@
 package com.testing.fonoapi.controllers;
 
 import com.testing.fonoapi.domain.dto.ReqTypeDTO;
+import com.testing.fonoapi.domain.dto.RequirementDTO;
 import com.testing.fonoapi.services.RequirementService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +18,12 @@ public class RequirementController {
     private final RequirementService requirementService;
 
     @GetMapping("/types")
-    public ResponseEntity<List<ReqTypeDTO>> getAllDevices() {
+    public ResponseEntity<List<ReqTypeDTO>> getAllReqTypes() {
         return ResponseEntity.ok(requirementService.getAllReqTypes());
+    }
+
+    @GetMapping
+    public ResponseEntity<List<RequirementDTO>> getAllReq() {
+        return ResponseEntity.ok(requirementService.getAllReq());
     }
 }

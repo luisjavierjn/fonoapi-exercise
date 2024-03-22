@@ -70,7 +70,7 @@ VALUES
 
 CREATE TABLE requirement_type (
     req_type_id SERIAL PRIMARY KEY,
-    name VARCHAR(255) NOT NULL
+    name VARCHAR(255) NOT NULL UNIQUE
 );
 
 INSERT INTO requirement_type (name) VALUES ('BOOKING');
@@ -78,21 +78,21 @@ INSERT INTO requirement_type (name) VALUES ('RETURN');
 
 ---
 
---CREATE TABLE requirement (
---    req_id SERIAL PRIMARY KEY,
---    user_id INT,
---    device_id INT,
---    req_type_id INT,
---    availability BOOLEAN,
---    datetime DATE,
---    FOREIGN KEY (user_id) REFERENCES users(user_id),
---    FOREIGN KEY (device_id) REFERENCES devices(device_id),
---    FOREIGN KEY (req_type_id) REFERENCES requirement_type(req_type_id)
---);
---
---INSERT INTO requirement (user_id, device_id, req_type_id, availability, datetime) VALUES (1, 1, 1, true, '2024-03-20');
---INSERT INTO requirement (user_id, device_id, req_type_id, availability, datetime) VALUES (2, 2, 2, false, '2024-03-21');
---INSERT INTO requirement (user_id, device_id, req_type_id, availability, datetime) VALUES (3, 3, 1, true, '2024-03-22');
---INSERT INTO requirement (user_id, device_id, req_type_id, availability, datetime) VALUES (4, 4, 2, false, '2024-03-23');
---INSERT INTO requirement (user_id, device_id, req_type_id, availability, datetime) VALUES (5, 5, 1, true, '2024-03-24');
+CREATE TABLE requirement (
+    req_id SERIAL PRIMARY KEY,
+    user_id INT,
+    device_id INT,
+    req_type_id INT,
+    availability BOOLEAN,
+    datetime DATE,
+    FOREIGN KEY (user_id) REFERENCES users(user_id),
+    FOREIGN KEY (device_id) REFERENCES devices(device_id),
+    FOREIGN KEY (req_type_id) REFERENCES requirement_type(req_type_id)
+);
+
+INSERT INTO requirement (user_id, device_id, req_type_id, availability, datetime) VALUES (1, 1, 1, true, '2024-03-20');
+INSERT INTO requirement (user_id, device_id, req_type_id, availability, datetime) VALUES (2, 2, 2, false, '2024-03-21');
+INSERT INTO requirement (user_id, device_id, req_type_id, availability, datetime) VALUES (3, 3, 1, true, '2024-03-22');
+INSERT INTO requirement (user_id, device_id, req_type_id, availability, datetime) VALUES (4, 4, 2, false, '2024-03-23');
+INSERT INTO requirement (user_id, device_id, req_type_id, availability, datetime) VALUES (5, 5, 1, true, '2024-03-24');
 
