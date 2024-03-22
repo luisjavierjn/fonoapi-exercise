@@ -1,6 +1,8 @@
 package com.testing.fonoapi.domain.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.testing.fonoapi.domain.entities.Device;
+import com.testing.fonoapi.domain.entities.Inventory;
 import com.testing.fonoapi.domain.entities.ReqType;
 import com.testing.fonoapi.domain.entities.User;
 import lombok.Getter;
@@ -15,8 +17,21 @@ import java.time.LocalDateTime;
 public class RequirementDTO {
     private Long reqId;
     private User user;
-    private Device device;
+    @JsonIgnore
+    private Inventory inventory;
+    @JsonIgnore
     private ReqType reqType;
-    private Boolean availability;
     private LocalDateTime dateTime;
+
+    public String getService() {
+        return reqType.getName();
+    }
+
+    public Device getDevice() {
+        return inventory.getDevice();
+    }
+
+    public Boolean getAvailable() {
+        return inventory.getQuantity() > 0;
+    }
 }

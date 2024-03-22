@@ -29,14 +29,11 @@ public class Requirement {
 
     @ManyToOne
     @JoinColumn(name = "DEVICE_ID", nullable = false)
-    private Device device;
+    private Inventory inventory;
 
     @ManyToOne
     @JoinColumn(name = "REQ_TYPE_ID", nullable = false)
     private ReqType reqType;
-
-    @Column(name = "AVAILABILITY", nullable = false)
-    private Boolean availability;
 
     @Column(name = "DATETIME", nullable = false)
     private LocalDateTime dateTime;

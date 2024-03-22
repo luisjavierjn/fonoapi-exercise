@@ -68,6 +68,23 @@ VALUES
 
 ---
 
+CREATE TABLE inventory (
+    device_id SERIAL PRIMARY KEY REFERENCES devices(device_id),
+    quantity INT
+);
+
+INSERT INTO inventory (device_id, quantity) VALUES (1, 10);
+INSERT INTO inventory (device_id, quantity) VALUES (2, 5);
+INSERT INTO inventory (device_id, quantity) VALUES (3, 8);
+INSERT INTO inventory (device_id, quantity) VALUES (4, 12);
+INSERT INTO inventory (device_id, quantity) VALUES (5, 3);
+INSERT INTO inventory (device_id, quantity) VALUES (6, 4);
+INSERT INTO inventory (device_id, quantity) VALUES (7, 1);
+INSERT INTO inventory (device_id, quantity) VALUES (8, 0);
+INSERT INTO inventory (device_id, quantity) VALUES (9, 0);
+
+---
+
 CREATE TABLE requirement_type (
     req_type_id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL UNIQUE
@@ -83,16 +100,15 @@ CREATE TABLE requirement (
     user_id INT,
     device_id INT,
     req_type_id INT,
-    availability BOOLEAN,
-    datetime DATE,
+    datetime TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(user_id),
-    FOREIGN KEY (device_id) REFERENCES devices(device_id),
+    FOREIGN KEY (device_id) REFERENCES inventory(device_id),
     FOREIGN KEY (req_type_id) REFERENCES requirement_type(req_type_id)
 );
 
-INSERT INTO requirement (user_id, device_id, req_type_id, availability, datetime) VALUES (1, 1, 1, true, '2024-03-20');
-INSERT INTO requirement (user_id, device_id, req_type_id, availability, datetime) VALUES (2, 2, 2, false, '2024-03-21');
-INSERT INTO requirement (user_id, device_id, req_type_id, availability, datetime) VALUES (3, 3, 1, true, '2024-03-22');
-INSERT INTO requirement (user_id, device_id, req_type_id, availability, datetime) VALUES (4, 4, 2, false, '2024-03-23');
-INSERT INTO requirement (user_id, device_id, req_type_id, availability, datetime) VALUES (5, 5, 1, true, '2024-03-24');
+INSERT INTO requirement (user_id, device_id, req_type_id) VALUES (1, 1, 1);
+INSERT INTO requirement (user_id, device_id, req_type_id) VALUES (2, 2, 2);
+INSERT INTO requirement (user_id, device_id, req_type_id) VALUES (3, 8, 1);
+INSERT INTO requirement (user_id, device_id, req_type_id) VALUES (4, 4, 2);
+INSERT INTO requirement (user_id, device_id, req_type_id) VALUES (5, 9, 1);
 
