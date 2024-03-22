@@ -70,4 +70,8 @@ public class RequirementService {
         requirement.setDatetime(LocalDateTime.now());
         return mapRequirementToRequirementDTO(reqRepository.save(requirement));
     }
+
+    public void del(Long id) {
+        reqRepository.deleteByReqId(id);
+    }
 }
