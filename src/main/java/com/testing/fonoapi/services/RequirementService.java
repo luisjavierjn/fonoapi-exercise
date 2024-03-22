@@ -17,6 +17,7 @@ import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -70,7 +71,7 @@ public class RequirementService {
                                 .build()
                 )
                 .setReqTypeDTO(modelMapper.map(req.getReqType(), ReqTypeDTO.class))
-                .setDateTime(req.getDateTime())
+                .setDatetime(req.getDatetime())
                 .build();
     }
 
@@ -80,6 +81,7 @@ public class RequirementService {
         Device device = deviceRepository.findByName(request.getDeviceName());
         requirement.setInventory(inventoryRepository.getByDeviceId(device.getDeviceId()));
         requirement.setReqType(reqTypeRepository.findByName(request.getReqTypeName()));
+        requirement.setDatetime(LocalDateTime.now());
         return mapRequirementToRequirementDTO(reqRepository.save(requirement));
     }
 }

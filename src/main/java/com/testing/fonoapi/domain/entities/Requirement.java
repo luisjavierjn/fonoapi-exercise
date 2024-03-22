@@ -38,5 +38,5 @@ public class Requirement {
     private ReqType reqType;
 
     @Column(name = "DATETIME", nullable = false)
-    private LocalDateTime dateTime;
+    private LocalDateTime datetime;
 }

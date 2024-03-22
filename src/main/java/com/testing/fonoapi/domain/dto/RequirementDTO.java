@@ -19,7 +19,7 @@ public class RequirementDTO {
     private InventoryDTO inventoryDTO;
     @JsonIgnore
     private ReqTypeDTO reqTypeDTO;
-    private LocalDateTime dateTime;
+    private LocalDateTime datetime;
 
     public String getService() {
         return reqTypeDTO.getName();
@@ -57,8 +57,8 @@ public class RequirementDTO {
         return this;
     }
 
-    public RequirementDTO setDateTime(LocalDateTime dateTime) {
-        this.dateTime = dateTime;
+    public RequirementDTO setDatetime(LocalDateTime datetime) {
+        this.datetime = datetime;
         return this;
     }
 
