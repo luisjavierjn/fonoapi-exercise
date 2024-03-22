@@ -13,10 +13,12 @@ controllers has been built addressing the following endpoints:
 * DELETE "/api/v1/req/{id}"
 
 **What aspect of this exercise did you find most interesting?**  
-
+the general definition of the problem that makes you think that there are different ways to approach a solution  
+depending on the technology being used and the design  
 
 **What did you find most cumbersome?**  
-
+dealing with the FonoApi I was supposed to use, there was no way to generate the token so I decided to go through  
+a workaround which was using my own data in H2  
 
 ## docker-compose up
 
